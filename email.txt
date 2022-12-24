@@ -1,0 +1,20 @@
+sending email from localhost
+
+php.ini
+extension = php_openss.dll
+SMTP =smtp.gmail.com
+smtp_port = 587
+sendemail_from = you@gmail.com
+sendmail_path = "\"C:\xampp\sendmail.exe\"
+
+email.php
+
+
+sendmail.ini
+smtp_server = smtp.gmail.com
+smtp_port =587
+smtp_ssl = tls
+
+
+
+

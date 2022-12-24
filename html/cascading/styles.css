@@ -1,0 +1,44 @@
+body{font-family: Arial;}
+
+#heading2{font-weight: bold;}
+
+span{
+    color: blueviolet;
+    letter-spacing: 1rem;
+}
+
+#main_box{
+    display:flex;
+    justify-content:space-between;
+}
+.list{
+    list-style: none;
+    display: inline block;
+}
+.box{
+    background-color: rgb(133, 133, 133);
+    border: solid 2px green;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+#second_box{
+    display:flex;
+    justify-content:space-between;
+}
+
+.box1{
+    border: solid 2px green;
+    padding: 20px;
+    width: 20%;
+}
+.box2{
+    border: solid 2px green;
+    padding: 20px;
+    width: 40%;
+}
+.box3{
+    border: solid 2px green;
+    padding: 20px;
+    width: 25%;
+}

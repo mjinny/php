@@ -1,0 +1,14 @@
+body {
+    font-family: verdana, helvetica, arial, sans-serif;
+    font-size: 1em;
+    }
+a{
+    color: red;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+a:hover{
+    background-color: rgb(174, 184, 184);
+    color: black;
+}

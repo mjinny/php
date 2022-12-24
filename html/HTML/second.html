@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+</head>
+<body>
+    <h1>More Fundamentals of HTML</h1>
+    <h2>Tables</h2>
+    <p>Tables should only be used for tabulated data and not for page layout. As with all other HTML elements tables should be styled with CSS but we will bend the rule slightly and use the border attribute for this exercise</p>
+    <table border="1">
+        <caption>This caption helps screen reader users to understand the table</caption>
+        <tr>
+            <th>One</th>
+            <th>Two</th>
+            <th>Three</th>
+        </tr>
+        <tr>
+            <td>This</td>
+            <td>That</td>
+            <td>Other</td>
+        </tr>
+        <tr>
+            <td>Which</td>
+            <td>What</td>
+            <td>When</td>
+        </tr>
+    </table>
+    <h2>Lists</h2>
+    <p>Lists are very important in web page design, they are for example the basis of page navigation</p>
+    <h2>Unordered Lists</h2>
+    <ul>
+        <li>blue</li>
+        <li>red</li>
+        <li>green</li>
+    </ul>
+    <h2>Ordered Lists</h2>
+    <ol start="1">
+        <li>blue</li>
+        <li>red</li>
+        <li>green</li>
+    </ol>
+    <h2>Nested Lists</h2>
+    <ol start="1">
+        <li>one</li>
+        <li>two</li>
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+        <li>three</li>
+    </ol>
+    <h2>Forms</h2>
+    <h3>A simple login form</h3>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+    </form><br>
+    <h3>Other common form elements and grouping by fieldset</h3>
+    <form>
+        <fieldset>
+            <legend>Enter your login details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </fieldset>
+        <fieldset>
+            <legend>Pizza Selection</legend>
+            <p>
+                <label for="size">Size:</label>
+                <input type="radio" id="small" name="size" value="small">
+                <label for="small">small</label>
+                <input type="radio" id="medium" name="size" value="medium">
+                <label for="medium">medium</label>
+                <input type="radio" id="large" name="size" value="large">
+                <label for="large">large</label></p>
+
+            <p><label for="topping">Topping:</label>
+            <select name="topping" id="topping">
+                <option value="p_select">Please select</option>
+                <option value="mushroom">Mushroom</option>
+                <option value="cheese">Extra Cheese</option>
+                <option value="mushroom">Mushroom</option>
+                <option value="pineapple">Pineapple</option>
+                <option value="pepper">Green Peppers</option>
+            </select></p>
+
+            <p><label for="extras">Extras:</label>
+                <input type="checkbox" id="Parmesan" name="extras" value="Parmesan">
+                <label for="Parmesan">Parmesan</label>
+                <input type="checkbox" id="Olives" name="extras" value="Olives">
+                <label for="Olives">Olives</label>
+                <input type="checkbox" id="Capers" name="extras" value="Capers">
+                <label for="Capers">Capers</label></p>
+
+        </fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>
