@@ -64,7 +64,11 @@ error_reporting(E_ALL);
 
             <label for="email">Email: </label>
 
-            <input type="text" name="eemail"  /><br /><br>
+            <input type="text" name="eemail" value="<?php
+            if(isset($_POST['eemail'])){
+                echo $_POST['eemail'];
+            }
+            ?>"  /><br /><br>
 
             <textarea rows="4" cols="50" name="txtarea"></textarea><br />
 
