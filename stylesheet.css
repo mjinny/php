@@ -41,13 +41,14 @@ hr{
     /* border: solid red; */
 }
 .topnav a{
-    display: inline;
     font-size: 19px;
+    display: inline;
     text-align: center;
     padding: 14px 16px ;
     text-decoration: none;
     color: black;
 }
+
 
 .topnav a:hover{color: rgb(202, 59, 59);/* font-size: 17px; */}
 
