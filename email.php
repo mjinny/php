@@ -1,5 +1,5 @@
 <?php 
-if(mail("mjennie444@gmail.com","Test subject","test message body")){
+if(mail("bhattadiwash17@gmail.com","Test subject","test message body")){
     echo "mail sent";
 }
 else{

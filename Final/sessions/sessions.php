@@ -25,10 +25,15 @@
     //add an else section that will include loginform.php and display any //error message that is held in ($_SESSION['error']
     else {
         include 'loginform.php';
-        echo"<br>".$_SESSION['error'];
+        if(isset($_SESSION['error'])){
+            
+            echo"<br>".$_SESSION['error'];
+        }
 
     }
     ?>
+
+
 </body>
 
 </html>

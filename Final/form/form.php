@@ -147,18 +147,18 @@ error_reporting(E_ALL);
 
     <h2>Pick a category</h2>
 
-    <a href="forms.php?cat=Films">Films</a>
+    <a href="form.php?cat=Films">Films</a>
 
-    <a href="forms.php?cat=Books">Books</a>
+    <a href="form.php?cat=Books">Books</a>
 
-    <a href="forms.php?cat=Music">Music</a>
+    <a href="form.php?cat=Music">Music</a>
 
     <?php
-    // if(isset($_POST[''])){
+    if (isset($_GET['cat'])) {
         $category =  $_GET['cat'];
-    // echo "The category chosen is" . $category;
-    // }
-     ?>
+        echo "<br><br>The category chosen is " . $category;
+    }
+    ?>
 </body>
 
 </html>
