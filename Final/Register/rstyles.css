@@ -41,7 +41,7 @@ h2{
 
     
 }
-input,button{
+input{
     border: none;
     background: none;
     outline: none;
@@ -77,23 +77,21 @@ input{
 
     color: #725b4a;
 }
-
-button {
+.btn{
+    border: none;;
+    width: 100%;
     display: block;
-    margin: 0 auto;
-    width: 50%;
-    height: 36px;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-}
-.submit {
     margin-top: 40px;
     margin-bottom: 20px;
     background: #d4af7a;
     text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
 }
+
 #terms{
     width: 5%;
 }
@@ -153,4 +151,9 @@ button {
 
 a{
     text-decoration: none;
+}
+.error{
+    color: red;
+    text-align: center;
+    font-size: 12px;
 }
