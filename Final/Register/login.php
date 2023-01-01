@@ -58,7 +58,7 @@
         <div class="leftside">
             <div class="formm">
             <h2>Sign In</h2>
-            <form method="POST">
+            <form method="POST" action="session.php">
                 
                 <label>
                     <span>Username</span>
@@ -70,7 +70,16 @@
                     <span class="error"><?php echo $error; ?>
 
                 </label>
-                
+                <label>
+                    <span id="age">Role&emsp;</span>
+                    <select name="range" id="agerange">
+                        <option class="options" value="Not Selected">Select Role</option>
+                        <option class="options" value="User">User</option>
+                        <option class="options" value="Admin">Admin</option>
+
+                    </select><br>
+                    
+                </label>
                 <label>
                 <!-- <button type="button" class="submit" name="submit">Log in</button> -->
                 <input type="submit" class ="btn" name="submit" value="Login">
