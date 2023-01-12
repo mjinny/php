@@ -1,0 +1,44 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background-color:#fde4cf ;
+    color: rgb(146, 89, 72);
+    
+}
+.header{
+    border: solid black;
+ 
+    padding: 10px;
+}
+.box{
+
+    border: solid red;
+    padding: 10px 10px 10px 20px;
+    
+}
+
+#category{
+    color: rgb(146, 89, 72);
+    padding: 5px;
+}#search {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid rgb(170, 148, 148);
+    width: 15%;
+    left: 0px;
+    position: relative;
+}
+
+#submit {
+    padding: 8px;
+    background: white;
+    border: 1px solid rgb(170, 148, 148);
+    border-radius: 10px;
+
+}
