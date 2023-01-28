@@ -14,7 +14,7 @@
     <div class="header">
         <!-- <h1>dwdwdw</h1> -->
         <?php
-        session_start();
+        // session_start();
         if (isset($_SESSION['username'])) {
             echo "<h2>" . "WELCOME,  " . $_SESSION['username'] . "</h2>";
             echo "<div id='logout'>
