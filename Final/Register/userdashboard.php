@@ -52,47 +52,90 @@
         
         </form>
     </div><hr>
-    <?php 
+    <?php
+    $search = $cat = $price = 0;
     if(isset($_GET['submit'])){
         $search = $_GET['search'];
         $cat = $_GET['cat'];
         $price = $_GET['price'];
+        // echo empty($search);
+        // echo $cat;
         // echo $price;
     }
     include("connection.php");
-    if(empty($search)){
-        if(!empty($cat)){
-            if(!empty($price)){
-                $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' ORDER BY ProductName";
-                if($price == 'high'){
-                    $sql = "SELECT * FROM skincare ORDER BY Price DESC";
-                }else{
-                    $sql = "SELECT * FROM skincare ORDER BY Price ASC";
-                }
-            }
-        }
+    if (!empty($search)) {
         $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%'";
-    }else{
-        $sql = "SELECT * FROM skincare";
+        if ($cat != 'Not Selected') { //selected
+            if ($price != 'Not Selected') { //selected
+                if ($price == 'high') {
+                    $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' AND Category = '$cat' ORDER BY Price DESC";
+                } else if ($price == 'low') {
+                    $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' AND Category = '$cat' ORDER BY Price ASC";
+
+                }
+            } else {
+                $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' AND Category = '$cat'";
+
+            }
+
+        } else if ($cat == 'Not Selected' && $price == 'high') {
+            $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' ORDER BY Price DESC";
+
+        } else if ($cat == 'Not Selected' && $price == 'low') {
+            $sql = "SELECT * FROM skincare WHERE ProductName LIKE '%$search%' ORDER BY Price ASC";
+        }
+    // } else if (empty($search)) {
+    //     if ($cat == 'Not Selected' && $price == 'high') {
+    //         $sql = "SELECT * FROM skincare ORDER BY Price DESC";
+    //     } else if ($cat == 'Not Selected' && $price == 'low') {
+    //         $sql = "SELECT * FROM skincare ORDER BY Price ASC";
+    //     } else if ($cat != 'Not Selected' && $price == 'high') {
+    //         $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price DESC";
+    //     } else if ($cat == 'Not Selected' && $price == 'low') {
+    //         $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price ASC";
+    //     } else if ($cat != 'Not Selected' && $price == 'high') {
+    //         $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price DESC";
+    //     } else if ($cat != 'Not Selected' && $price == 'low') {
+    //         $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price ASC";
+    //     } else if ($cat == 'Not Selected' && $price == 'Not Selected') {
+    //         $sql = "SELECT * FROM skincare";
+    //     }
+    // } else {
+    //     $sql = "SELECT * FROM skincare WHERE Category = '$cat'";
+    // }
+        
+    }else if(empty($search) && $cat =='Not Selected' && $price =='high'){
+        $sql = "SELECT * FROM skincare ORDER BY Price DESC";
+
+    }else if(empty($search) && $cat =='Not Selected' && $price =='low'){
+        $sql = "SELECT * FROM skincare ORDER BY Price ASC";
+
+    }else if(empty($search) && $cat !='Not Selected' && $price =='high'){
+        $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price DESC";
+
+    }else if(empty($search) && $cat =='Not Selected' && $price =='low'){
+        $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price ASC";
+
+    }elseif(empty($search) && $cat !='Not Selected' && $price =='high'){
+        $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price DESC";
+
+    }elseif(empty($search) && $cat !='Not Selected' && $price =='low'){
+        $sql = "SELECT * FROM skincare WHERE Category = '$cat' ORDER BY Price ASC";
 
     }
-    // if(empty($search)){
-    //     if(empty($cat)){
-    //         if (empty($price)){
-    //             $sql = "SELECT * FROM skincare";
-    //         }else if($price =='high'){
-    //             $sql = "SELECT * FROM skincare ORDER BY Price DESC";
-    //         }else{
-    //             $sql = "SELECT * FROM skincare ORDER BY Price ASC";
-    //         }
-    //     }
-    // }else{
-    //     $sql = "SELECT * FROM skincare";
+    else if(empty($search) && $cat =='Not Selected' && $price =='Not Selected'){
+        $sql = "SELECT * FROM skincare";
+    }
+    else{
+            $sql = "SELECT * FROM skincare WHERE Category = '$cat'";
+    }
 
-    // }
+
     $qry = mysqli_query($com, $sql) or die(mysqli_error($com));
     $count = mysqli_num_rows(($qry));
+
     if($count>0){
+        echo "<h2><br>" . $count . " Products" . "<br></h2><br>";
         echo "<table>";
         echo "<tr>
             <th>ID</th>  
@@ -111,6 +154,9 @@
 
         }
         echo "</table>"."<br>";
+    }else{
+        echo "<h1>" . "<br>No Data Available" . "</h1>";
+
     }
     ?>
 

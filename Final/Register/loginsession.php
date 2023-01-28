@@ -8,7 +8,7 @@
         $password = md5($_POST['password']);
         $role = $_POST['role'];
 
-        $sql = "SELECT * FROM register WHERE Username = '$username' AND Password = '$password'";
+        $sql = "SELECT * FROM register WHERE Username = '$username' AND Password = '$password' AND Role = '$role'";
 
         $result = mysqli_query($com, $sql);
         if ($row = mysqli_fetch_assoc($result)) {
