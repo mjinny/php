@@ -24,6 +24,7 @@
         $qry = mysqli_query($com, $sql) or die(mysqli_error($com));
         if($qry){
         header("location:{$_SERVER['HTTP_REFERER']}");
+        // header("location:crud.php");
         echo "Data inserted";
         }
 

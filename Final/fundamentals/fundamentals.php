@@ -21,7 +21,7 @@
             echo'<br>'."It's midweek".'<br>';
         }
         else{
-            echo'<br>'."It's normal college day".'<br>';
+            echo'<br>'."It's not midweek".'<br>';
         }
 
         $hour = date('H');
@@ -38,6 +38,14 @@
         else{
             echo'<br>'.'Good Afternoon'.'<br>';
         }
+         echo "<br>";
+        $pass = "password";
+        if(strlen($pass)>4 && strlen($pass)<10){
+            echo "Password length is valid";}
+        else{
+            echo"Password length is invalid";
+        }
+        
 		?>
 
         <h2>Ticket</h2>

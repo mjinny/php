@@ -77,7 +77,18 @@
       echo "{$num1} as a percentage of {$num2} = " . ($num1 / $num2) * 100 . "%" . "<br>";
       echo "{$num2} divided by {$num1} = " . number_format($num2 / $num1, 2);
       ?>
-
+      <h2>Extra</h2>
+      <?php
+      $height= 1.60;
+      $height_in_inches = ($height * 100)/2.54;
+      $feet = $height_in_inches/12;
+      $inch = ($feet - floor($feet))*10;
+      
+      echo "Name: " . $name . '<br>';
+      echo "Age: " . $age . '<br>';
+      echo "Height in Meters: " . $height. '<br>';
+      echo "Height in Feet and inches: " . floor($feet)."ft ".floor($inch)."ins" . "<br>";
+      ?>
    </section>
    <footer> <br>
       <hr><br>

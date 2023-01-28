@@ -9,7 +9,8 @@
     //executing query
     $qry = mysqli_query($com, $sql) or die(mysqli_error($com));
 
-    header("Location: {$_SERVER['HTTP_REFERER']}");
+    // header("Location: {$_SERVER['HTTP_REFERER']}");
+header("location:crud.php");
 
     // if (mysqli_affected_rows($com) > 0) {
 

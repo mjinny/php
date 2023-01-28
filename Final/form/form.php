@@ -158,7 +158,8 @@ error_reporting(E_ALL);
         $category =  $_GET['cat'];
         echo "<br><br>The category chosen is " . $category;
     }
-    ?>
+    ?><hr><br>
+    <a href="Order.php">Extension</a><br><br><br>
 </body>
 
 </html>
